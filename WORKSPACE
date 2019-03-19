@@ -20,7 +20,7 @@ http_archive(
   build_file = "@cpplint_build//file:downloaded",
 )
 
-hash = "9a9c5f7"
+hash = "7257aa6"
 http_archive(
   name = "libprim",
   urls = ["https://github.com/nicmcd/libprim/tarball/" + hash],
@@ -28,7 +28,7 @@ http_archive(
   strip_prefix = "nicmcd-libprim-" + hash,
 )
 
-hash = "6ddcc9c"
+hash = "cd2e7d9"
 http_archive(
   name = "librnd",
   urls = ["https://github.com/nicmcd/librnd/tarball/" + hash],

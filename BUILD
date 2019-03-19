@@ -18,8 +18,8 @@ COPTS = [
 ]
 
 LIBS = [
-  "@libprim//:lib",
-  "@librnd//:lib",
+  "@libprim//:prim",
+  "@librnd//:rnd",
 ]
 
 cc_library(
@@ -48,7 +48,7 @@ cc_library(
 )
 
 cc_binary(
-  name = "bin",
+  name = "randomnumbers",
   srcs = ["src/main.cc"],
   includes = [
     "src",
@@ -80,7 +80,7 @@ cc_library(
 )
 
 cc_test(
-  name = "test",
+  name = "randomnumbers_test",
   copts = COPTS,
   deps = [
     ":test_lib",
