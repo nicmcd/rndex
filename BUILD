@@ -5,17 +5,7 @@ exports_files([
   "NOTICE",
 ])
 
-COPTS = [
-  "-Wall",
-  "-Wextra",
-  "-pedantic",
-  "-Wfatal-errors",
-  "-std=c++11",
-  "-march=native",
-  "-g",
-  "-O3",
-  "-flto",
-]
+COPTS = []
 
 LIBS = [
   "@libprim//:prim",
@@ -48,7 +38,7 @@ cc_library(
 )
 
 cc_binary(
-  name = "randomnumbers",
+  name = "rndex",
   srcs = ["src/main.cc"],
   includes = [
     "src",
@@ -80,7 +70,7 @@ cc_library(
 )
 
 cc_test(
-  name = "randomnumbers_test",
+  name = "rndex_test",
   copts = COPTS,
   deps = [
     ":test_lib",
