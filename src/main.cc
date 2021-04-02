@@ -28,15 +28,12 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
-#include <prim/prim.h>
-#include <rnd/Random.h>
-
 #include <cstdio>
 
-s32 main(s32 _argc, char** _argv) {
-  (void)_argc;  // unused
-  (void)_argv;  // unused
+#include "prim/prim.h"
+#include "rnd/Random.h"
 
+s32 main(s32 /*_argc*/, char** /*_argv*/) {
   rnd::Random rnd(12345678);
   for (u32 r = 0; r < 10; r++) {
     printf("%u -> %lu\n", r, rnd.nextU64(0, 10));
