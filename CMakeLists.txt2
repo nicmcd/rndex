@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.18)
+
+project(rndex)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+if(NOT EXISTS ${LIBPRIM_DIR})
+  message(FATAL_ERROR "${LIBPRIM_DIR} does not exist")
+endif()
+if(NOT EXISTS ${LIBPRIM_DIR}/include)
+  message(FATAL_ERROR "${LIBPRIM_DIR}/include does not exist")
+endif()
+if(NOT EXISTS ${LIBPRIM_DIR}/lib)
+  message(FATAL_ERROR "${LIBPRIM_DIR}/lib does not exist")
+endif()
+if(NOT EXISTS ${LIBRND_DIR})
+  message(FATAL_ERROR "${LIBRND_DIR} does not exist")
+endif()
+if(NOT EXISTS ${LIBRND_DIR}/include)
+  message(FATAL_ERROR "${LIBRND_DIR}/include does not exist")
+endif()
+if(NOT EXISTS ${LIBRND_DIR}/lib)
+  message(FATAL_ERROR "${LIBRND_DIR}/lib does not exist")
+endif()
+
+add_executable(
+  rndex
+  ${PROJECT_SOURCE_DIR}/src/main.cc
+  )
+target_include_directories(
+  rndex
+  PUBLIC
+  ${PROJECT_SOURCE_DIR}/src
+  ${LIBPRIM_DIR}/include
+  ${LIBRND_DIR}/include
+  )
+target_link_libraries(
+  rndex
+  ${LIBPRIM_DIR}/lib/libprim.a
+  ${LIBRND_DIR}/lib/librnd.a
+  )
+
+include(GNUInstallDirs)
+
+install(
+  TARGETS
+  rndex
+  )
