@@ -25,7 +25,7 @@ http_file(
   urls = ["https://raw.githubusercontent.com/nicmcd/pkgbuild/master/clang-format"],
 )
 
-hash = "ef2951d"
+hash = "f564c5c"
 http_archive(
   name = "libprim",
   urls = ["https://github.com/nicmcd/libprim/tarball/" + hash],
@@ -33,7 +33,7 @@ http_archive(
   strip_prefix = "nicmcd-libprim-" + hash,
 )
 
-hash = "868faad"
+hash = "9820e0f"
 http_archive(
   name = "librnd",
   urls = ["https://github.com/nicmcd/librnd/tarball/" + hash],
